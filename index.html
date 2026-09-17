@@ -117,31 +117,32 @@
     }
 
     nav.primary{
-      position:fixed; top:0; right:0; bottom:0; height:100%; width:min(88vw,380px);
+      position:fixed; top:0; right:0; bottom:0; height:100%; width:min(80vw,308px);
       background:var(--ivory); flex-direction:column; align-items:stretch; gap:0;
-      padding:1.4rem 1.8rem calc(1.8rem + env(safe-area-inset-bottom));
+      padding:1rem 1.5rem calc(1.6rem + env(safe-area-inset-bottom));
       transform:translateX(100%); transition:transform .4s var(--ease);
       box-shadow:-24px 0 70px rgba(18,38,25,.22); z-index:130; overflow-y:auto;
       -webkit-overflow-scrolling:touch;
     }
     nav.primary.open{transform:translateX(0)}
-    .navclose{display:inline-flex; align-self:flex-end; margin:-.2rem -.4rem .6rem 0}
-    /* drawer items styled as tappable buttons */
+    .navclose{display:inline-flex; align-items:center; justify-content:center; position:static;
+      align-self:flex-end; width:38px; height:38px; margin:0 -.3rem .5rem 0;
+      border:1px solid var(--line); border-radius:50%; color:var(--forest-deep)}
+    .navclose:active{background:var(--sage-soft)}
+    /* clean typographic list — not oversized blocks */
     nav.primary a{
       display:flex; align-items:center; justify-content:space-between; gap:.6rem;
-      font-size:1.05rem; font-weight:600; padding:.95rem 1.15rem; width:100%; margin-bottom:.6rem;
-      background:var(--sage-soft); border:1px solid var(--sage-line); border-radius:10px;
-      color:var(--forest-deep); box-shadow:none;
-      transition:background .25s var(--ease), border-color .25s var(--ease), transform .12s var(--ease);
+      font-size:1.02rem; font-weight:500; letter-spacing:.005em; padding:.9rem .2rem; width:100%;
+      background:none; border:0; border-bottom:1px solid var(--line); border-radius:0; color:var(--forest-deep);
+      transition:color .2s var(--ease), padding-left .2s var(--ease);
     }
-    nav.primary a:hover,nav.primary a:active{background:#dde6d3; border-color:var(--sage)}
-    nav.primary a:active{transform:scale(.985)}
+    nav.primary a:active{color:var(--plum); padding-left:.5rem}
     nav.primary a::after{content:"›"; position:static; display:block; width:auto; height:auto;
-      background:none; color:var(--sage); font-size:1.4rem; line-height:1; font-weight:400}
+      background:none; color:var(--sage); font-size:1.25rem; line-height:1; font-weight:400}
     nav.primary a.navmenu-cta{justify-content:center; color:var(--ivory); background:var(--forest);
-      border-color:var(--forest); margin-top:.6rem; margin-bottom:0; padding:1.05rem 1.4rem; font-size:1rem;
-      box-shadow:0 10px 24px rgba(18,38,25,.18)}
-    nav.primary a.navmenu-cta:hover{background:var(--forest-mid); border-color:var(--forest-mid)}
+      border:0; border-radius:6px; margin-top:1.3rem; padding:.9rem 1.4rem; font-size:.96rem; font-weight:600;
+      box-shadow:0 8px 20px rgba(18,38,25,.16)}
+    nav.primary a.navmenu-cta:active{color:var(--ivory); padding-left:1.4rem}
     nav.primary a.navmenu-cta::after{content:none}
 
     .menutoggle{display:inline-flex}
@@ -300,8 +301,8 @@
     .hero-inner{padding:7rem 0 3.4rem}
     .hero h1{font-size:clamp(2.4rem,8.6vw,3.1rem); line-height:1.07; margin-bottom:1.1rem; max-width:20ch}
     .hero p.sub{font-size:1.05rem; line-height:1.55; margin-bottom:1.9rem; max-width:40ch}
-    .hero .cta-row{flex-direction:column; align-items:stretch; gap:.7rem; margin-bottom:1.9rem}
-    .hero .cta-row .btn{width:100%; justify-content:center; padding:1rem 1.2rem; font-size:.98rem}
+    .hero .cta-row{flex-direction:column; align-items:flex-start; gap:.7rem; margin-bottom:1.9rem}
+    .hero .cta-row .btn{width:auto; max-width:100%; justify-content:center; padding:.72rem 1.35rem; font-size:.9rem}
     .hero .trust{font-size:.86rem; max-width:38ch}
 
     /* intro */
@@ -342,8 +343,8 @@
     /* final cta */
     .finalcta{padding:4.2rem 0}
     .finalcta p{font-size:1.05rem; margin-bottom:1.9rem}
-    .finalcta .cta-row{flex-direction:column; align-items:stretch; gap:.7rem}
-    .finalcta .cta-row .btn{width:100%; justify-content:center}
+    .finalcta .cta-row{flex-direction:column; align-items:center; gap:.7rem}
+    .finalcta .cta-row .btn{width:auto; max-width:100%; justify-content:center; padding:.72rem 1.35rem; font-size:.9rem}
 
     /* contact + footer */
     .contact a{overflow-wrap:anywhere}
@@ -626,11 +627,10 @@
           <p class="eyebrow">Contact Admissions</p>
           <h2 id="ct-h">We're here to help you find the right next step.</h2>
           <div class="cinfo" style="margin-top:1.7rem">
-            <p style="font-family:var(--serif); font-size:1.2rem; color:#fff; margin-bottom:.5rem">I'm Still Standing By Grace, Inc.</p>
+            <p style="font-family:var(--serif); font-size:1.2rem; color:#fff; margin-bottom:.9rem">I'm Still Standing By Grace, Inc.</p>
             <p><span class="label">Address</span>1001–1003 East Patapsco Avenue<br>Baltimore, MD 21225</p>
             <p><span class="label">Phone</span><a href="tel:+14438310191">(443) 831-0191</a></p>
             <p><span class="label">Email</span><a href="mailto:adminsupport@standingbygrace.org">adminsupport@standingbygrace.org</a></p>
-            <p style="margin-top:1.3rem"><span class="label">By Grace Counseling Services</span><a href="tel:+14103553711">(410) 355-3711</a></p>
           </div>
         </div>
         <div class="crisis-box reveal" role="note" aria-label="Crisis notice">
