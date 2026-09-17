@@ -94,6 +94,7 @@
   nav.primary a::after{content:""; position:absolute; left:0; bottom:-3px; width:0; height:1.5px; background:var(--plum); transition:width .3s var(--ease)}
   nav.primary a:hover,nav.primary a:focus-visible{color:var(--forest-deep)}
   nav.primary a:hover::after,nav.primary a:focus-visible::after{width:100%}
+  nav.primary a.navmenu-cta{display:none} /* mobile-drawer CTA only; hidden on desktop */
   .navcta{display:flex; align-items:center; gap:.9rem}
   .menutoggle{display:none; background:none; border:1px solid var(--stone-deep); border-radius:4px; padding:.5rem .6rem; cursor:pointer; color:var(--forest-deep)}
   .menutoggle svg{display:block}
@@ -107,7 +108,7 @@
     }
     nav.primary.open{transform:translateX(0)}
     nav.primary a{font-size:1.12rem; padding:.85rem 0; width:100%; border-bottom:1px solid var(--line)}
-    nav.primary a.navmenu-cta{margin-top:1.1rem; border-bottom:0}
+    nav.primary a.navmenu-cta{display:inline-flex; color:var(--ivory); margin-top:1.1rem; border-bottom:0; width:auto}
     .menutoggle{display:inline-flex}
     .navcta .btn-desktop{display:none}
     .scrim{position:fixed; inset:0; background:rgba(18,38,25,.42); opacity:0; pointer-events:none; transition:opacity .35s var(--ease); z-index:110}
