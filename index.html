@@ -108,6 +108,7 @@
     .navrow{min-height:64px}
     .brand{margin-left:6px}
     .brand .mark{height:50px}
+    .menutoggle{margin-right:6px}
 
     .nav-tagline{
       display:block; flex:1 1 auto; min-width:0; text-align:center; padding:0 .5rem;
@@ -125,14 +126,27 @@
     }
     nav.primary.open{transform:translateX(0)}
     .navclose{display:inline-flex; align-self:flex-end; margin:-.2rem -.4rem .6rem 0}
-    nav.primary a{font-size:1.14rem; font-weight:500; padding:1rem 0; width:100%; border-bottom:1px solid var(--line)}
-    nav.primary a:last-of-type{border-bottom:0}
-    nav.primary a::after{display:none}
-    nav.primary a.navmenu-cta{justify-content:center; color:var(--ivory); margin-top:1.4rem; padding:1rem 1.4rem; border-bottom:0; font-size:1rem}
+    /* drawer items styled as tappable buttons */
+    nav.primary a{
+      display:flex; align-items:center; justify-content:space-between; gap:.6rem;
+      font-size:1.05rem; font-weight:600; padding:.95rem 1.15rem; width:100%; margin-bottom:.6rem;
+      background:var(--sage-soft); border:1px solid var(--sage-line); border-radius:10px;
+      color:var(--forest-deep); box-shadow:none;
+      transition:background .25s var(--ease), border-color .25s var(--ease), transform .12s var(--ease);
+    }
+    nav.primary a:hover,nav.primary a:active{background:#dde6d3; border-color:var(--sage)}
+    nav.primary a:active{transform:scale(.985)}
+    nav.primary a::after{content:"›"; position:static; display:block; width:auto; height:auto;
+      background:none; color:var(--sage); font-size:1.4rem; line-height:1; font-weight:400}
+    nav.primary a.navmenu-cta{justify-content:center; color:var(--ivory); background:var(--forest);
+      border-color:var(--forest); margin-top:.6rem; margin-bottom:0; padding:1.05rem 1.4rem; font-size:1rem;
+      box-shadow:0 10px 24px rgba(18,38,25,.18)}
+    nav.primary a.navmenu-cta:hover{background:var(--forest-mid); border-color:var(--forest-mid)}
+    nav.primary a.navmenu-cta::after{content:none}
 
     .menutoggle{display:inline-flex}
     .navcta .btn-desktop{display:none}
-    .scrim{position:fixed; inset:0; background:rgba(18,38,25,.45); opacity:0; pointer-events:none; transition:opacity .35s var(--ease); z-index:120}
+    .scrim{position:fixed; inset:0; background:rgba(20,40,28,.24); backdrop-filter:blur(1px); -webkit-backdrop-filter:blur(1px); opacity:0; pointer-events:none; transition:opacity .4s var(--ease); z-index:120}
     .scrim.show{opacity:1; pointer-events:auto}
   }
   @media (max-width:360px){ .nav-tagline{display:none} }
