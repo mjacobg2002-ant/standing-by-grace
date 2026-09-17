@@ -285,6 +285,90 @@
   footer.site .fbrand img{height:64px; width:auto; flex:0 0 auto}
   footer.site .disc{max-width:60ch; line-height:1.55; margin:0}
 
+  /* =====================  MOBILE REFINEMENTS  ===================== */
+  @media (max-width:720px){
+    /* rhythm & type */
+    section{padding:3.7rem 0}
+    .eyebrow{font-size:.68rem; margin-bottom:.85rem}
+    .eyebrow::before{width:24px}
+    .lead{font-size:1.06rem; line-height:1.6}
+    .section-head h2{margin-bottom:1rem}
+    .btn{white-space:normal; text-align:center}
+
+    /* hero */
+    .hero{min-height:auto}
+    .hero-inner{padding:7rem 0 3.4rem}
+    .hero h1{font-size:clamp(2.4rem,8.6vw,3.1rem); line-height:1.07; margin-bottom:1.1rem; max-width:20ch}
+    .hero p.sub{font-size:1.05rem; line-height:1.55; margin-bottom:1.9rem; max-width:40ch}
+    .hero .cta-row{flex-direction:column; align-items:stretch; gap:.7rem; margin-bottom:1.9rem}
+    .hero .cta-row .btn{width:100%; justify-content:center; padding:1rem 1.2rem; font-size:.98rem}
+    .hero .trust{font-size:.86rem; max-width:38ch}
+
+    /* intro */
+    .intro-grid{gap:1.8rem}
+
+    /* programs */
+    .prog{padding:2.1rem 0; gap:1.35rem}
+    .prog-num{margin-bottom:.65rem; font-size:.68rem}
+    .prog-num .idx{font-size:1.05rem}
+    .prog h3{margin-bottom:.7rem}
+    .prog-media{border-radius:8px}
+
+    /* levels */
+    .level-grid{margin-top:2rem; gap:.9rem}
+    .level{padding:1.4rem 1.4rem 1.5rem; border-radius:8px}
+    .level .lv{font-size:1.5rem}
+
+    /* by grace */
+    .svc-list{margin-top:1.4rem}
+    .svc-list li{padding:.65rem 0 .65rem 1.6rem}
+    .bygrace-card{padding:1.8rem; border-radius:10px}
+
+    /* admissions — number beside heading, copy beneath */
+    .steps{margin-top:1.9rem; gap:0}
+    .step{padding:1.25rem 0; border-top:1px solid var(--line);
+      display:grid; grid-template-columns:auto 1fr; column-gap:1.1rem; row-gap:.35rem}
+    .step:first-child{border-top:0; padding-top:0}
+    .step::before{display:none}
+    .step .n{grid-row:1; grid-column:1; font-size:1.9rem; margin:0; align-self:center; color:var(--sage)}
+    .step h3{grid-row:1; grid-column:2; align-self:center; margin:0}
+    .step p{grid-column:2}
+    .admit-note{margin-top:2rem; padding:1.2rem 1.3rem}
+
+    /* training */
+    .train-list{margin:1.3rem 0 1.6rem}
+    .training-media{border-radius:8px}
+
+    /* final cta */
+    .finalcta{padding:4.2rem 0}
+    .finalcta p{font-size:1.05rem; margin-bottom:1.9rem}
+    .finalcta .cta-row{flex-direction:column; align-items:stretch; gap:.7rem}
+    .finalcta .cta-row .btn{width:100%; justify-content:center}
+
+    /* contact + footer */
+    .contact a{overflow-wrap:anywhere}
+    .crisis-box{padding:1.4rem 1.4rem; border-radius:8px}
+    footer.site{padding:2.2rem 0}
+    footer.site .frow{gap:1rem 1.4rem}
+    footer.site .fbrand{font-size:.95rem}
+    footer.site .fbrand img{height:52px}
+    footer.site .disc{font-size:.8rem}
+  }
+
+  @media (max-width:480px){
+    section{padding:3.2rem 0}
+    .wrap{padding:0 20px}
+    .crisisbar{font-size:.72rem; padding:.55rem .85rem; line-height:1.45}
+    .hero-inner{padding:6.4rem 0 3rem}
+    .hero h1{font-size:2.2rem}
+    .hero p.sub{font-size:1rem}
+    .section-head h2{font-size:1.85rem}
+    .distinct{padding:1.4rem 1.35rem}
+    .bygrace-card{padding:1.5rem}
+    .bygrace-card .bignum{font-size:2rem}
+    .contact h2{font-size:1.7rem}
+  }
+
   /* Reveal */
   .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
   .reveal.in{opacity:1; transform:none}
