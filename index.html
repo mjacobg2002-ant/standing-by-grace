@@ -95,25 +95,47 @@
   nav.primary a:hover,nav.primary a:focus-visible{color:var(--forest-deep)}
   nav.primary a:hover::after,nav.primary a:focus-visible::after{width:100%}
   nav.primary a.navmenu-cta{display:none} /* mobile-drawer CTA only; hidden on desktop */
+  .nav-tagline{display:none} /* shown only on mobile, fills the centre gap */
   .navcta{display:flex; align-items:center; gap:.9rem}
-  .menutoggle{display:none; background:none; border:1px solid var(--stone-deep); border-radius:4px; padding:.5rem .6rem; cursor:pointer; color:var(--forest-deep)}
+  .menutoggle{display:none; background:none; border:1px solid var(--stone-deep); border-radius:6px; padding:.55rem .6rem; cursor:pointer; color:var(--forest-deep)}
   .menutoggle svg{display:block}
+  .navclose{display:none; position:absolute; top:1.1rem; right:1.2rem; background:none; border:0; padding:.4rem; cursor:pointer; color:var(--forest-deep); border-radius:6px}
 
   @media (max-width:1000px){
+    /* backdrop-filter on the header would trap position:fixed children inside it,
+       so the drawer must not rely on it here — use a solid header instead */
+    header.site{background:var(--ivory); backdrop-filter:none; -webkit-backdrop-filter:none; border-bottom:1px solid var(--line)}
+    .navrow{min-height:64px}
+    .brand{margin-left:6px}
+    .brand .mark{height:50px}
+
+    .nav-tagline{
+      display:block; flex:1 1 auto; min-width:0; text-align:center; padding:0 .5rem;
+      font-family:var(--serif); font-style:italic; font-size:.84rem; color:var(--plum);
+      letter-spacing:.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+
     nav.primary{
-      position:fixed; inset:0 0 0 auto; width:min(86vw,360px); background:var(--ivory);
-      flex-direction:column; align-items:flex-start; gap:.1rem; padding:6rem 2rem 2rem;
-      transform:translateX(100%); transition:transform .42s var(--ease); box-shadow:-24px 0 70px rgba(18,38,25,.2);
-      z-index:120; overflow-y:auto;
+      position:fixed; top:0; right:0; bottom:0; height:100%; width:min(88vw,380px);
+      background:var(--ivory); flex-direction:column; align-items:stretch; gap:0;
+      padding:1.4rem 1.8rem calc(1.8rem + env(safe-area-inset-bottom));
+      transform:translateX(100%); transition:transform .4s var(--ease);
+      box-shadow:-24px 0 70px rgba(18,38,25,.22); z-index:130; overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
     }
     nav.primary.open{transform:translateX(0)}
-    nav.primary a{font-size:1.12rem; padding:.85rem 0; width:100%; border-bottom:1px solid var(--line)}
-    nav.primary a.navmenu-cta{display:inline-flex; color:var(--ivory); margin-top:1.1rem; border-bottom:0; width:auto}
+    .navclose{display:inline-flex; align-self:flex-end; margin:-.2rem -.4rem .6rem 0}
+    nav.primary a{font-size:1.14rem; font-weight:500; padding:1rem 0; width:100%; border-bottom:1px solid var(--line)}
+    nav.primary a:last-of-type{border-bottom:0}
+    nav.primary a::after{display:none}
+    nav.primary a.navmenu-cta{justify-content:center; color:var(--ivory); margin-top:1.4rem; padding:1rem 1.4rem; border-bottom:0; font-size:1rem}
+
     .menutoggle{display:inline-flex}
     .navcta .btn-desktop{display:none}
-    .scrim{position:fixed; inset:0; background:rgba(18,38,25,.42); opacity:0; pointer-events:none; transition:opacity .35s var(--ease); z-index:110}
+    .scrim{position:fixed; inset:0; background:rgba(18,38,25,.45); opacity:0; pointer-events:none; transition:opacity .35s var(--ease); z-index:120}
     .scrim.show{opacity:1; pointer-events:auto}
   }
+  @media (max-width:360px){ .nav-tagline{display:none} }
 
   /* Hero */
   .hero{position:relative; min-height:clamp(600px,90vh,900px); display:flex; align-items:center; color:var(--ivory); isolation:isolate}
@@ -271,7 +293,11 @@
     <a class="brand" href="#top" aria-label="I'm Still Standing By Grace — home">
       <img class="mark" src="public/images/standing-by-grace/logo.png" alt="I'm Still Standing By Grace" width="56" height="60" />
     </a>
+    <span class="nav-tagline" aria-hidden="true">Empowering Lives · Restoring Hope</span>
     <nav class="primary" id="primary-nav" aria-label="Primary">
+      <button class="navclose" id="navClose" type="button" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
       <a href="#programs">Programs</a>
       <a href="#levels">Residential</a>
       <a href="#bygrace">Counseling</a>
@@ -549,6 +575,8 @@
     document.body.style.overflow = open ? 'hidden' : '';
   }
   btn.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
+  var navClose = document.getElementById('navClose');
+  if(navClose) navClose.addEventListener('click', function(){ setMenu(false); btn.focus(); });
   scrim.addEventListener('click', function(){ setMenu(false); });
   nav.addEventListener('click', function(e){ if(e.target.tagName === 'A') setMenu(false); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && nav.classList.contains('open')) setMenu(false); });
