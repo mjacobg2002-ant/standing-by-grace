@@ -1,30 +1,27 @@
 # Image Manifest — I'm Still Standing By Grace (homepage concept)
 
-All photography sourced from Pexels (https://www.pexels.com) under the Pexels License
-(free to use, no attribution required — attribution provided here as good practice).
-Images were downloaded locally and are **not** hotlinked. People pictured are stock models,
-not Standing By Grace clients, staff, or program participants.
+Photography and the logo are the organization's **own assets**, sourced from their live
+website (standingbygrace.org, Squarespace CDN) and downloaded locally — not hotlinked.
+These are their real Baltimore facility, community rooms, sessions, and building.
 
-| Local filename | Section | Pexels URL | Photographer | Suggested alt text |
-|---|---|---|---|---|
-| `hero-hope.jpg` | Hero | https://www.pexels.com/photo/12489057/ | Imzaar | A person stands calmly outdoors at dusk, looking toward a wide violet sky. |
-| `residential-kitchen.jpg` | Residential Treatment | https://www.pexels.com/photo/5084204/ | Yaroslav Shuraev | Adults preparing a meal together at a table in a bright, homelike kitchen. |
-| `counseling-conversation.jpg` | Counseling & Outpatient | https://www.pexels.com/photo/5699419/ | Alex Green | Two adults in a calm, private one-on-one conversation. |
-| `group-support.jpg` | Group & Peer Recovery | https://www.pexels.com/photo/5710923/ | Tima Miroshnichenko | A diverse group of adults seated together in a supportive discussion. |
-| `assisted-living.jpg` | Assisted Living | https://www.pexels.com/photo/6787761/ | Marcus Aurelius | Adults sharing a relaxed, warm conversation over coffee in a comfortable home setting. |
-| `workforce-training.jpg` | Training & Education / Workforce | https://www.pexels.com/photo/5940846/ | Kampus Production | Diverse adults collaborating and learning together in a classroom. |
-| `community-independence.jpg` | Community Independence | https://www.pexels.com/photo/7929606/ | Mikhail Nilov | An adult walking confidently along a city sidewalk. |
+| Local filename | Section | Source (their site) | Suggested alt text |
+|---|---|---|---|
+| `logo.png` | Header / footer / favicon | `SBG Logo` (background cleaned to transparent) | I'm Still Standing By Grace |
+| `logo-original.png` | Source only | Original supplied logo PNG (unmodified) | — |
+| `sbg-street.jpg` | Hero + Final CTA | `assist.png` | Two people walking along a Baltimore street outside the Standing By Grace building. |
+| `sbg-community-room.jpg` | 01 Residential Treatment | `peer.png` | A warm, homelike community room with comfortable seating. |
+| `sbg-group-table.jpg` | 02 Outpatient | `OP.png` | A small group meeting around a table in a bright counseling room. |
+| `sbg-group-circle.jpg` | 03 Mental Health | `IOP.png` | Adults seated in a circle for a supportive group discussion. |
+| `sbg-building.jpg` | 04 Psychiatric Rehabilitation | `ots.png` | The Standing By Grace building with a dove mural in the Baltimore community. |
+| `sbg-welcome-room.jpg` | 05 Assisted Living | `dui.png` | Adults gathered in a welcoming, homelike meeting space. |
+| `sbg-training.jpg` | 06 Peer Recovery & Workforce | `early.png` | A facilitator leading a training session with an engaged group. |
+| `sbg-presentation.jpg` | Training & Education | `prevention.png` | A presenter leading a workshop with a group of participants. |
 
-## Brand marks (authentic, retained)
-
-| Local filename | Use | Notes |
-|---|---|---|
-| `logo-original.png` | Source only | Original supplied Standing By Grace logo (unmodified source). |
-| `logo-dove.png` | Header / footer mark | Dove-and-olive-branch element cropped from the authentic logo. |
-| `logo-full.png` | Optional | Trimmed full emblem. |
-
-## Photography direction notes
-- Consistent warm/natural color temperature across selects.
-- Candid, documentary, naturally lit; no visible drug use, needles, hospital beds, or white-coat "fake doctors."
-- Diverse in age, gender, and background; hopeful without staged corporate cheer.
-- No image contains overlaid text or fake logos.
+## Notes
+- The logo was cleaned by dropping the faint, low-alpha speckle wash from the supplied PNG,
+  leaving the full emblem (dove, wordmark, laurel) crisp on a transparent background. No
+  background is added behind it anywhere on the site.
+- All photographs are the organization's own imagery. Alt text is descriptive and does not
+  assert the identity of anyone pictured.
+- Original design brief had specified replacing site photography with Pexels stock; per the
+  client's direction this was reversed to use their authentic photos.

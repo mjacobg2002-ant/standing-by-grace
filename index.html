@@ -8,7 +8,7 @@
 <meta name="robots" content="noindex" />
 <meta name="theme-color" content="#1c3b2e" />
 <!-- Presentation concept only. Not affiliated with the live website. -->
-<link rel="icon" href="public/images/standing-by-grace/logo-badge.png" />
+<link rel="icon" href="public/images/standing-by-grace/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
@@ -87,10 +87,8 @@
   header.site.scrolled{border-color:var(--line); box-shadow:0 2px 30px rgba(18,38,25,.07)}
   .navrow{display:flex; align-items:center; justify-content:space-between; gap:1.5rem; padding:.6rem 0; min-height:70px}
   .brand{display:flex; align-items:center; gap:.75rem; text-decoration:none}
-  .brand .mark{width:46px; height:46px; border-radius:50%; box-shadow:0 4px 14px rgba(18,38,25,.16); flex:0 0 auto}
-  .brand .bname{font-family:var(--serif); font-size:1.06rem; line-height:1.02; color:var(--forest-deep); letter-spacing:-.01em}
-  .brand .bname em{font-style:italic; font-weight:400}
-  .brand .bname small{display:block; font-family:var(--sans); font-weight:600; font-size:.575rem; letter-spacing:.19em; text-transform:uppercase; color:var(--plum); margin-top:4px}
+  .brand .mark{height:60px; width:auto; flex:0 0 auto; display:block}
+  @media (max-width:1000px){.brand .mark{height:52px}}
   nav.primary{display:flex; align-items:center; gap:2rem}
   nav.primary a{font-family:var(--sans); font-weight:500; font-size:.9rem; letter-spacing:.005em; text-decoration:none; color:var(--ink); position:relative; padding:.25rem 0}
   nav.primary a::after{content:""; position:absolute; left:0; bottom:-3px; width:0; height:1.5px; background:var(--plum); transition:width .3s var(--ease)}
@@ -119,11 +117,11 @@
   /* Hero */
   .hero{position:relative; min-height:clamp(600px,90vh,900px); display:flex; align-items:center; color:var(--ivory); isolation:isolate}
   .hero .bg{position:absolute; inset:0; z-index:-2; background:#20182a}
-  .hero .bg img{width:100%; height:100%; object-fit:cover; object-position:72% center}
+  .hero .bg img{width:100%; height:100%; object-fit:cover; object-position:60% center}
   .hero::after{content:""; position:absolute; inset:0; z-index:-1;
     background:
-      linear-gradient(90deg, rgba(18,38,25,.9) 0%, rgba(18,38,25,.66) 40%, rgba(69,42,78,.32) 74%, rgba(69,42,78,.1) 100%),
-      linear-gradient(0deg, rgba(18,38,25,.42) 0%, rgba(18,38,25,0) 32%);
+      linear-gradient(90deg, rgba(15,32,22,.92) 0%, rgba(17,36,24,.72) 42%, rgba(22,48,31,.4) 74%, rgba(22,48,31,.18) 100%),
+      linear-gradient(0deg, rgba(15,32,22,.5) 0%, rgba(15,32,22,0) 34%);
   }
   .hero-inner{padding:5rem 0}
   .hero .eyebrow{color:#e4d4ee}
@@ -244,11 +242,11 @@
   .crisis-box strong a{color:#fff; border-color:#fff}
   @media (max-width:820px){.contact-grid{grid-template-columns:1fr; gap:2.6rem}}
 
-  footer.site{background:var(--forest-ink); color:#98a294; padding:2.6rem 0; font-size:.84rem; border-top:1px solid rgba(219,227,213,.08)}
-  footer.site .frow{display:flex; flex-wrap:wrap; gap:1.2rem 2rem; align-items:center; justify-content:space-between}
-  footer.site .fbrand{display:flex; align-items:center; gap:.75rem; color:#d3d9cd; font-family:var(--serif); font-size:1rem}
-  footer.site .fbrand img{width:40px; height:40px; border-radius:50%; flex:0 0 auto}
-  footer.site .disc{max-width:62ch; line-height:1.55; margin:0}
+  footer.site{background:var(--ivory-2); color:var(--muted); padding:2.6rem 0; font-size:.84rem; border-top:1px solid var(--line)}
+  footer.site .frow{display:flex; flex-wrap:wrap; gap:1.2rem 2.5rem; align-items:center; justify-content:space-between}
+  footer.site .fbrand{display:flex; align-items:center; gap:.6rem; color:var(--forest-deep); font-family:var(--serif); font-size:1rem}
+  footer.site .fbrand img{height:64px; width:auto; flex:0 0 auto}
+  footer.site .disc{max-width:60ch; line-height:1.55; margin:0}
 
   /* Reveal */
   .reveal{opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
@@ -270,8 +268,7 @@
 <header class="site" id="top">
   <div class="wrap navrow">
     <a class="brand" href="#top" aria-label="I'm Still Standing By Grace — home">
-      <img class="mark" src="public/images/standing-by-grace/logo-badge.png" alt="" width="46" height="46" />
-      <span class="bname">Standing <em>By</em> Grace<small>Empowering Lives · Restoring Hope</small></span>
+      <img class="mark" src="public/images/standing-by-grace/logo.png" alt="I'm Still Standing By Grace" width="56" height="60" />
     </a>
     <nav class="primary" id="primary-nav" aria-label="Primary">
       <a href="#programs">Programs</a>
@@ -296,7 +293,7 @@
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-h">
-    <div class="bg"><img src="public/images/standing-by-grace/hero-hope.jpg" alt="A person stands calmly outdoors at dusk, looking toward a wide violet sky." fetchpriority="high" /></div>
+    <div class="bg"><img src="public/images/standing-by-grace/sbg-street.jpg" alt="Two people walking together along a Baltimore street outside the Standing By Grace building." fetchpriority="high" /></div>
     <div class="wrap hero-inner">
       <p class="eyebrow">Behavioral Health · Recovery · Opportunity</p>
       <h1 id="hero-h">Care for Every Step Forward.</h1>
@@ -343,7 +340,7 @@
       </div>
 
       <article class="prog reveal">
-        <div class="prog-media"><img src="public/images/standing-by-grace/residential-kitchen.jpg" alt="Adults preparing a meal together at a table in a bright, homelike kitchen." loading="lazy" /></div>
+        <div class="prog-media"><img src="public/images/standing-by-grace/sbg-community-room.jpg" alt="A warm, homelike community room with comfortable seating at Standing By Grace." loading="lazy" /></div>
         <div class="prog-copy">
           <span class="prog-num"><span class="idx">01</span> Residential Treatment</span>
           <h3>A structured place to stabilize and grow.</h3>
@@ -352,7 +349,7 @@
       </article>
 
       <article class="prog reveal">
-        <div class="prog-media"><img src="public/images/standing-by-grace/counseling-conversation.jpg" alt="Two adults in a calm, private one-on-one conversation." loading="lazy" /></div>
+        <div class="prog-media"><img src="public/images/standing-by-grace/sbg-group-table.jpg" alt="A small group meeting around a table in a bright counseling room." loading="lazy" /></div>
         <div class="prog-copy">
           <span class="prog-num"><span class="idx">02</span> Outpatient Substance-Use Treatment</span>
           <h3>Flexible care that fits real life.</h3>
@@ -361,7 +358,7 @@
       </article>
 
       <article class="prog reveal">
-        <div class="prog-media"><img src="public/images/standing-by-grace/group-support.jpg" alt="A diverse group of adults seated together in a supportive discussion." loading="lazy" /></div>
+        <div class="prog-media"><img src="public/images/standing-by-grace/sbg-group-circle.jpg" alt="Adults seated in a circle for a supportive group discussion." loading="lazy" /></div>
         <div class="prog-copy">
           <span class="prog-num"><span class="idx">03</span> Mental Health &amp; Integrated Care</span>
           <h3>Whole-person behavioral health.</h3>
@@ -370,7 +367,7 @@
       </article>
 
       <article class="prog reveal">
-        <div class="prog-media"><img src="public/images/standing-by-grace/community-independence.jpg" alt="An adult walking confidently along a city sidewalk." loading="lazy" /></div>
+        <div class="prog-media"><img src="public/images/standing-by-grace/sbg-building.jpg" alt="The Standing By Grace building with a dove mural in the Baltimore community." loading="lazy" /></div>
         <div class="prog-copy">
           <span class="prog-num"><span class="idx">04</span> Psychiatric Rehabilitation</span>
           <h3>Support for independent, connected living.</h3>
@@ -379,7 +376,7 @@
       </article>
 
       <article class="prog reveal">
-        <div class="prog-media"><img src="public/images/standing-by-grace/assisted-living.jpg" alt="Adults sharing a relaxed, warm conversation over coffee in a comfortable home setting." loading="lazy" /></div>
+        <div class="prog-media"><img src="public/images/standing-by-grace/sbg-welcome-room.jpg" alt="Adults gathered in a welcoming, homelike meeting space." loading="lazy" /></div>
         <div class="prog-copy">
           <span class="prog-num"><span class="idx">05</span> Assisted Living</span>
           <h3>Dignity, safety and quality of life.</h3>
@@ -388,7 +385,7 @@
       </article>
 
       <article class="prog reveal">
-        <div class="prog-media"><img src="public/images/standing-by-grace/workforce-training.jpg" alt="Adults participating in a professional training and career-readiness workshop." loading="lazy" /></div>
+        <div class="prog-media"><img src="public/images/standing-by-grace/sbg-training.jpg" alt="A facilitator leading a training session with an engaged group." loading="lazy" /></div>
         <div class="prog-copy">
           <span class="prog-num"><span class="idx">06</span> Peer Recovery &amp; Workforce Training</span>
           <h3>Recovery that opens doors.</h3>
@@ -478,14 +475,14 @@
           <a href="#contact" class="btn btn-primary">Explore Training Opportunities</a>
           <p class="train-note">Final eligibility and CPRS certification are determined by the Maryland Addiction &amp; Behavioral-health Professionals Certification Board (MABPCB). Participation does not guarantee certification.</p>
         </div>
-        <div class="training-media reveal"><img src="public/images/standing-by-grace/workforce-training.jpg" alt="Diverse adults collaborating and learning together in a classroom." loading="lazy" /></div>
+        <div class="training-media reveal"><img src="public/images/standing-by-grace/sbg-presentation.jpg" alt="A presenter leading a workshop with a group of participants." loading="lazy" /></div>
       </div>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="finalcta" aria-labelledby="fc-h">
-    <div class="bg"><img src="public/images/standing-by-grace/community-independence.jpg" alt="" loading="lazy" /></div>
+    <div class="bg"><img src="public/images/standing-by-grace/sbg-street.jpg" alt="" loading="lazy" /></div>
     <div class="wrap">
       <h2 id="fc-h" class="reveal">You Don't Have to Take the Next Step Alone.</h2>
       <p class="reveal">Whether you are seeking treatment, helping a loved one or making a professional referral, our admissions team can help identify the appropriate next step.</p>
@@ -527,7 +524,7 @@
 <footer class="site">
   <div class="wrap frow">
     <div class="fbrand">
-      <img src="public/images/standing-by-grace/logo-badge.png" alt="" width="40" height="40" />
+      <img src="public/images/standing-by-grace/logo.png" alt="" width="60" height="64" />
       <span>I'm Still Standing By Grace, Inc.</span>
     </div>
     <p class="disc">Concept homepage for presentation purposes only — not the live website. Photography via Pexels; individuals pictured are models, not clients, staff or program participants.</p>

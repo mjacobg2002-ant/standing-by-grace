@@ -23,10 +23,12 @@ A modern, editorial, **homepage-only redesign concept** for I'm Still Standing B
 - Semantic landmarks, skip link, keyboard navigable, WCAG-minded contrast.
 - Respects `prefers-reduced-motion`; lazy-loaded imagery; optimized JPEGs.
 
-## Photography
-All photos are sourced from [Pexels](https://www.pexels.com), downloaded locally (not hotlinked),
-and documented in `public/images/standing-by-grace/IMAGE-MANIFEST.md`. People pictured are stock
-models — **not** clients, staff, or program participants — and alt text is written accordingly.
+## Photography & logo
+All imagery is the organization's **own** — their real Baltimore facility, community rooms,
+sessions, and building, plus their logo — pulled from standingbygrace.org, downloaded locally
+(not hotlinked), and documented in `public/images/standing-by-grace/IMAGE-MANIFEST.md`. The logo
+is used on a transparent background (its faint speckle wash was cleaned off); no background is
+added behind it. Alt text is descriptive and does not assert anyone's identity.
 
 ## Content notes
 Copy avoids inventing staff, testimonials, success rates, awards, insurance coverage, accreditation,
